@@ -41,10 +41,15 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-gem 'rspec', '~> 2.0', group: [:development, :test]
-gem 'capybara', group: [:development, :test]
-# Use debugger
-gem 'debugger', group: [:development, :test]
+group :development, :test do 
+  gem 'rspec', '~> 2.0'
+  gem 'rspec-rails'
+  gem 'capybara'
+  # Use debugger
+  gem 'debugger'
+  # Shoulda-matchers for AR Associations testing
+  gem 'shoulda-matchers'
+end
 
 #Use Faker for seed file
 gem 'faker'
