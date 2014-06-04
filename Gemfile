@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -41,7 +41,7 @@ gem 'bcrypt', '~> 3.1.2'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-group :development, :test do 
+group :development, :test do
   gem 'rspec', '~> 2.0'
   gem 'rspec-rails'
   gem 'capybara'
@@ -49,6 +49,7 @@ group :development, :test do
   gem 'debugger'
   # Shoulda-matchers for AR Associations testing
   gem 'shoulda-matchers'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 #Use Faker for seed file
