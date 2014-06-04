@@ -49,6 +49,7 @@ group :development, :test do
   gem 'debugger'
   # Shoulda-matchers for AR Associations testing
   gem 'shoulda-matchers'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 #Use Faker for seed file
