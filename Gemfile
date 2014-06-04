@@ -45,3 +45,6 @@ gem 'rspec', '~> 2.0', group: [:development, :test]
 gem 'capybara', group: [:development, :test]
 # Use debugger
 gem 'debugger', group: [:development, :test]
+
+#Use Faker for seed file
+gem 'faker'
