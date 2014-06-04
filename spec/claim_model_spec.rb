@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
 describe Claim do
-  context "has attributes" do
+  describe "has attributes" do
     let(:claim) { Claim.new(author_id: 1, body: "Everything is awesome.") }
 
     it "has an author_id" do
@@ -13,7 +13,7 @@ describe Claim do
     end
   end
 
-  context "has correct associations" do
+  describe "has necessary associations" do
     it { should belong_to(:author).class_name('User') }
     it { should have_many(:arguments_where_conclusion).class_name('Argument').with_foreign_key('conclusion_id')}
     it { should have_many(:assumptions_where_premise).class_name('Assumption').with_foreign_key('premise_id')}
