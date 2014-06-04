@@ -1,5 +1,3 @@
-![Travis Build Status](https://travis-ci.org/bengolden/Hydrant_Heart.svg?branch=master)
-
 [![Build Status](https://travis-ci.org/bengolden/Hydrant_Heart.svg?branch=master)](https://travis-ci.org/bengolden/Hydrant_Heart)
 
 ## Schema
