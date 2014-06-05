@@ -1,0 +1,106 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/controllers/welcome_controller.rb": [
+        1,
+        null,
+        1,
+        5,
+        5,
+        null,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/argument.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/assumption.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/claim.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/user.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/vote.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1401995637
+  }
+}
