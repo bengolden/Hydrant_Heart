@@ -4,13 +4,20 @@
 <section id="argument_container">
 
 	<div id="conclusion_container">
-		<h2 id="argument_conclusion"><%= @argument.conclusion.body %></h2>
-		<h3 id="argument_author"><%= @argument.author.username%></h3>
+		<h2 id="argument_conclusion">Argument: <%= @argument.conclusion.body %></h2>
+		<h3 id="argument_author">by: <%= @argument.author.username%></h3>
 	</div>
 
-	<% @argument.%>
+	<h2>Premises for this argument:</h2>
+	<div class="premise#{premise.id}_container">
+		<% @argument.premises.each do |premise|%>
+				<h4 id="premise#{premise.id}">
+					<%= link_to(premise.body, argument_path(premise)) %>
 
-	<div class="premise_container">
-		<h4 id=""> </h4>
+					by: <%= link_to(premise.author.username, user_path(premise.author)) %>
+				</h4>
+		<% end -%>
 	</div>
+
+
 </section> 
