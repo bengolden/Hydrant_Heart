@@ -52,4 +52,5 @@ describe User do
       for(:email).
       with_message('Improper email format')
     end
+  end
 end
