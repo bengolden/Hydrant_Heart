@@ -29,6 +29,10 @@ describe Claim do
     it "its body should have no more than 140 characters" do
       should ensure_length_of(:body).is_at_most(140).with_long_message("Its like Twitter, only 140 characters per claim.  That's fun!")
     end
+
+    it "it should have a reference to an author" do
+      should validate_presence_of(:author)
+    end
   end
 
 end

@@ -35,6 +35,10 @@ describe User do
       should validate_presence_of(:username)
     end
 
+    it "should have protect passwords securely" do
+      should have_secure_password
+    end
+
     it "email should not be empty" do
       should validate_presence_of(:email)
     end
