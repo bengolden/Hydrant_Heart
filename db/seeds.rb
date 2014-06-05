@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require 'Faker'
+require 'faker'
 
 
 users = [{email: "justin@email.com", username: "justin", password: "password", image_url: "http://www.aquariumfish.net/images_01/cambodian_betta_male_120217b6_w0640.jpg"},
