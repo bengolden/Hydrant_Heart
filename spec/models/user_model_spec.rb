@@ -19,24 +19,40 @@ describe User do
   end
 
   context "bcrypt password methods" do
-    let!(:rocky) { User.create(username: "rocky", email: "rocky@email.com", password: "password", image_url: "http://dogcarers.com/wp-content/uploads/2014/02/westies-dog-breed2.jpg")}
-    # it "alters password before storing in database" do
-    #   #check that creating a new user calls method
-    #   # expect(rocky.password.to_s).not_to eq("password")
-    #   # expect(rocky.password)
-    # end
-    describe "#password=" do
-      it "gets a hash from bcrypt" do
-        expect(BCrypt::Password).to receive("create")
-        rocky.password = "awesome"
-      end
 
-      it "compares database hash to password" do
-        expect(rocky).to receive(:password_hash=).with(rocky.instance_variable_get(:@password))
-        rocky.password = "awesome"
+    before :each do
+      @rocky = User.create!(username: "rocky", email: "rocky@email.com", password: "password", image_url: "http://dogcarers.com/wp-content/uploads/2014/02/westies-dog-breed2.jpg")
+    end
+
+    describe "#password=" do
+      specify "should return a BCrypt::Password" do
+        expect(@rocky.password).to be_an_instance_of(BCrypt::Password)
       end
     end
+
   end
+
+  describe "Comparing a hashed password with a secret" do
+    before :each do
+      @secret = "U*U"
+      @hash = "$2a$05$CCCCCCCCCCCCCCCCCCCCC.E5YPO9kmyuRGyh0XouQYb4YMJKvyOeW"
+      @password = BCrypt::Password.create(@secret)
+      @rocky = User.create!(username: "rocky", email: "rocky@email.com", password: @secret, image_url: "http://dogcarers.com/wp-content/uploads/2014/02/westies-dog-breed2.jpg")
+    end
+
+    specify "should compare successfully to the original secret" do
+      expect(@rocky.password == @secret).to be(true)
+    end
+
+    specify "should compare unsuccessfully to anything besides original secret" do
+      expect(@rocky.password == "@secret").to be(false)
+    end
+
+    specify "password_hash should be a hash" do
+      expect(@rocky.password_hash).to be_an_instance_of(BCrypt::Password)
+    end
+  end
+
 
   context "associations" do
     it "has many votes" do
