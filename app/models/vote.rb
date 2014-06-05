@@ -5,3 +5,4 @@ class Vote < ActiveRecord::Base
   validates :voteable_type, presence: true
   validates :value, inclusion: { in: [true, false] }
 end
+
