@@ -35,6 +35,9 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+# Add in coverall
+gem 'coveralls', require: false
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
