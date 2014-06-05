@@ -1,4 +1,6 @@
 HydrantHeart::Application.routes.draw do
+  get "welcome/index"
+  root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,6 +15,9 @@ HydrantHeart::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :claims
+  resources :arguments
+  resources :users
 
   # Example resource route with options:
   #   resources :products do
