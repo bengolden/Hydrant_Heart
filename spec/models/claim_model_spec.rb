@@ -2,11 +2,16 @@ require_relative '../spec_helper'
 
 describe Claim do
   describe "has attributes" do
-    let(:claim) { Claim.new(author_id: 1, body: "Everything is awesome.") }
+    let(:user) { User.create(username: "Phil", email: "be@ge.com", password: "password" )}
+    let(:claim) { Claim.new(author_id: user.id, body: "Everything is awesome.") }
 
     it "has an author_id" do
-      expect(claim.author_id).to eq(1)
+      expect(claim.author_id).to eq(user.id)
     end
+
+    # it "has an author" do
+    #   expect(claim.author.class).to eq(User)
+    # end
 
     it "has a body" do
       expect(claim.body).to eq("Everything is awesome.")
@@ -30,7 +35,7 @@ describe Claim do
       should ensure_length_of(:body).is_at_most(140).with_long_message("Its like Twitter, only 140 characters per claim.  That's fun!")
     end
 
-    it "it should have a reference to an author" do
+    xit "it should have a reference to an author" do
       should validate_presence_of(:author)
     end
   end

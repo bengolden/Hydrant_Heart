@@ -10,11 +10,33 @@ describe User do
     it "has an attribute email" do
       should allow_value('ddeutsch@book.com').for(:email)
     end
-    it "has an attribute password stuff" do
+    it "has an attribute password" do
       should allow_value('123fsadf45').for(:password)
     end
     it "has an attribute image_url" do
       should allow_value('http://www.image.com/20').for(:image_url)
+    end
+  end
+
+  context "bcrypt password methods" do
+    let!(:rocky) { User.create(username: "rocky", email: "rocky@email.com", password: "password", image_url: "http://dogcarers.com/wp-content/uploads/2014/02/westies-dog-breed2.jpg")}
+    # This should be a different test
+    # it "alters password before storing in database" do
+    #   #check that creating a new user calls method
+    #   # expect(rocky.password.to_s).not_to eq("password")
+    #   # expect(rocky.password)
+    # end
+    describe "#password=" do
+      it "gets a hash from bcrypt" do
+        expect(BCrypt::Password).to receive("create")
+        rocky.password = "awesome"
+      end
+
+      it "compares database hash to password" do
+        pending("from working with Torey... need to grab expected hash from right place")
+        expect(rocky).to receive(:password_hash=).with(rocky.instance_variable_get(:@password))
+        rocky.password = "awesome"
+      end
     end
   end
 
