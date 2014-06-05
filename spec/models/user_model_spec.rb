@@ -29,4 +29,28 @@ describe User do
       should have_many(:authored_arguments).class_name('Argument').with_foreign_key(:author_id)
     end
   end
+
+  context "validations:" do
+    it "username should not be empty" do
+      should validate_presence_of(:username)
+    end
+
+    it "email should not be empty" do
+      should validate_presence_of(:email)
+    end
+
+    it "username should be a unique value" do
+      should validate_uniqueness_of(:username)
+    end
+
+    it "email should be a unique value" do
+      should validate_uniqueness_of(:email)
+    end
+
+    it "email should be a legitimate format" do
+      should allow_value('jus23-tin@gmail.com', 'b@v9.au').
+      for(:email).
+      with_message('Improper email format')
+    end
+  end
 end
