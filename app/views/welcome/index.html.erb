@@ -1,0 +1,14 @@
+<h2>Recent Claims</h2>
+<ul>
+<% @recent_claims.each do |claim| %>
+  <li><a href="/claims/<%= claim.id %>"><%= claim.body %></a> -<%= claim.author.username %></li>
+<% end %>
+</ul>
+
+<h2>Recent Arguments</h2>
+<ul>
+<% @recent_arguments.each do |argument| %>
+  <% argument.is_supporting == true ? position = "supporting" : position = "opposing" %>
+  <li><a href="/arguments/<%= argument.id %>"> New argument <%= position %> '<%= argument.conclusion.body %>' by <%=argument.author.username%></a></li>
+<% end %>
+</ul>
