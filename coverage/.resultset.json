@@ -1,7 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-
       "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/helpers/application_helper.rb": [
         1,
         null
@@ -15,11 +14,10 @@
         1,
         null
       ],
-      "/Users/bengolden/Desktop/Hydrant_Heart/app/helpers/welcome_helper.rb": [
+      "/Users/apprentice/Desktop/hydrant_heart/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-
       "/Users/apprentice/Desktop/hydrant_heart/app/controllers/welcome_controller.rb": [
 
         1,
@@ -49,19 +47,14 @@
         1,
         1,
         1,
-        null,
-        null,
         1,
         1,
         1,
         null,
-        1,
-        3,
         null,
         null,
         1,
-        5,
-        null,
+        1,
         null,
         null
       ],
@@ -74,9 +67,9 @@
         1,
         1,
         null,
+        1,
         null
       ],
-
 
       "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/claim.rb": [
 
@@ -100,7 +93,9 @@
       "/Users/apprentice/Desktop/hydrant_heart/app/models/user.rb": [
 
         1,
+        null,
         1,
+        null,
         1,
         null,
         1,
@@ -136,14 +131,12 @@
         1,
         1,
         1,
+        null,
         1,
         1,
         1,
         null,
         null,
-        null,
-        1,
-        1,
         null,
         null
       ]
