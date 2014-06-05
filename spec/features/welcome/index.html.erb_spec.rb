@@ -28,7 +28,7 @@ feature "welcome/index.html.erb" do
     end
 
     it "sees a list of recent arguments" do
-      # pending("need welcome controller tests first")
+      pending("need welcome controller tests first")
       claim = Claim.create(author_id: 1, body: "The world is flat")
       author = User.create(username: "henry")
       argument = Argument.create(author_id: 2, conclusion_id: 4, is_supporting: false)
@@ -45,6 +45,7 @@ feature "welcome/index.html.erb" do
       click_on "New argument opposing 'The world is flat' by henry"
       expect(page.current_path).to eq("/arguments/#{argument.id}")
     end
+
   end
 
 end
