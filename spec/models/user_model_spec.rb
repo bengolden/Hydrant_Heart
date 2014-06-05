@@ -29,7 +29,6 @@ describe User do
         expect(@rocky.password).to be_an_instance_of(BCrypt::Password)
       end
     end
-
   end
 
   describe "Comparing a hashed password with a secret" do

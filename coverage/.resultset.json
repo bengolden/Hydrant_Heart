@@ -1,7 +1,17 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/bengolden/Desktop/Hydrant_Heart/app/helpers/application_helper.rb": [
+
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/controllers/welcome_controller.rb": [
+      "/Users/apprentice/Desktop/hydrant_heart/app/helpers/application_helper.rb": [
         1,
         null
       ],
@@ -9,13 +19,33 @@
         1,
         null
       ],
-      "/Users/bengolden/Desktop/Hydrant_Heart/app/models/user.rb": [
+
+      "/Users/apprentice/Desktop/hydrant_heart/app/controllers/welcome_controller.rb": [
+
         1,
         null,
         1,
+        5,
+        5,
         null,
+        null
+      ],
+
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/controllers/application_controller.rb": [
+
+      "/Users/apprentice/Desktop/hydrant_heart/app/controllers/application_controller.rb": [
+
         1,
         null,
+        null,
+        1,
+        null
+      ],
+
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/argument.rb": [
+
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/argument.rb": [
+
         1,
         1,
         1,
@@ -33,10 +63,25 @@
         5,
         null,
         null,
+        null
+      ],
+
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/assumption.rb": [
+
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/assumption.rb": [
+
+        1,
+        1,
+        1,
         null,
         null
       ],
-      "/Users/bengolden/Desktop/Hydrant_Heart/app/models/claim.rb": [
+
+
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/claim.rb": [
+
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/claim.rb": [
+
         1,
         1,
         1,
@@ -49,7 +94,11 @@
         1,
         null
       ],
-      "/Users/bengolden/Desktop/Hydrant_Heart/app/models/vote.rb": [
+
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/user.rb": [
+
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/user.rb": [
+
         1,
         1,
         1,
@@ -58,11 +107,32 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/vote.rb": [
+
+        4,
+        4,
         null,
         null,
         null
       ],
-      "/Users/bengolden/Desktop/Hydrant_Heart/app/models/argument.rb": [
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/vote.rb": [
+
         1,
         1,
         1,
@@ -78,6 +148,10 @@
         null
       ]
     },
-    "timestamp": 1402006412
+
+    "timestamp": 1401995637
+
+    "timestamp": 1402002058
+
   }
 }
