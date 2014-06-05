@@ -13,13 +13,13 @@ class User < ActiveRecord::Base
   validates :username, :email, uniqueness: true
   validates :email, format: { with: /\S+@\w+.\w+/, message: "Improper email format" }
 
-  # def password ##TESTING
-  #   @password ||= Password.new(password_hash)
-  # end
+  def password ##TESTING
+    @password ||= Password.new(password_hash)
+  end
 
-  # def password=(new_password) ##TESTING
-  #   @password = Password.create(new_password)
-  #   self.password_hash = @password
-  # end
+  def password=(new_password) ##TESTING
+    @password = Password.create(new_password)
+    self.password_hash = @password
+  end
 
 end
