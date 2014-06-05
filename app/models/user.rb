@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
 
   include BCrypt ## NEEDED??
 
-  has_many :authored_arguments, class_name: "Argument", foreign_key: :author_id, inverse_of: :user
-  has_many :authored_claims, class_name: "Claim", foreign_key: :author_id, inverse_of: :user
-  has_many :votes, inverse_of: :user
+  has_many :authored_arguments, class_name: "Argument", foreign_key: :author_id#, inverse_of: :user
+  has_many :authored_claims, class_name: "Claim", foreign_key: :author_id#, inverse_of: :user
+  has_many :votes#, inverse_of: :user
 
 
   validates :username, :email, presence: true
