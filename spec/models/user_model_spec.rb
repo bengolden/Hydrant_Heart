@@ -20,6 +20,7 @@ describe User do
 
   context "bcrypt password methods" do
     let!(:rocky) { User.create(username: "rocky", email: "rocky@email.com", password: "password", image_url: "http://dogcarers.com/wp-content/uploads/2014/02/westies-dog-breed2.jpg")}
+    # This should be a different test
     # it "alters password before storing in database" do
     #   #check that creating a new user calls method
     #   # expect(rocky.password.to_s).not_to eq("password")
@@ -32,6 +33,7 @@ describe User do
       end
 
       it "compares database hash to password" do
+        pending("from working with Torey... need to grab expected hash from right place")
         expect(rocky).to receive(:password_hash=).with(rocky.instance_variable_get(:@password))
         rocky.password = "awesome"
       end
