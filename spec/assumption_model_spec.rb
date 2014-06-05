@@ -20,4 +20,14 @@ describe Assumption do
 
   end
 
+  describe "validations:" do
+    it "it should have a reference to argument" do
+      should validate_presence_of(:argument)
+    end
+
+    it "it should have a reference to its premise" do
+      should validate_presence_of(:premise)
+    end
+  end
+
 end
