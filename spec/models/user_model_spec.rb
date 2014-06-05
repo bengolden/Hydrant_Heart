@@ -20,13 +20,21 @@ describe User do
 
   context "bcrypt password methods" do
     let!(:rocky) { User.create(username: "rocky", email: "rocky@email.com", password: "password", image_url: "http://dogcarers.com/wp-content/uploads/2014/02/westies-dog-breed2.jpg")}
-    it "alters password before storing in database" do
-      #expect to return a long string not same as entered password
-      expect(rocky.password.to_s).not_to eq("password")
-    end
+    # it "alters password before storing in database" do
+    #   #check that creating a new user calls method
+    #   # expect(rocky.password.to_s).not_to eq("password")
+    #   # expect(rocky.password)
+    # end
+    describe "#password=" do
+      it "gets a hash from bcrypt" do
+        expect(BCrypt::Password).to receive("create")
+        rocky.password = "awesome"
+      end
 
-    it "compares given password to stored password hash properly" do
-      expect(rocky.password_hash.inspect).to eq(rocky.password.inspect)
+      it "compares database hash to password" do
+        expect(rocky).to receive(:password_hash=).with(rocky.instance_variable_get(:@password))
+        rocky.password = "awesome"
+      end
     end
   end
 

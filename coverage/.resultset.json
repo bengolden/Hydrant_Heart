@@ -1,0 +1,107 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/apprentice/Desktop/hydrant_heart/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/hydrant_heart/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/hydrant_heart/app/controllers/welcome_controller.rb": [
+        1,
+        null,
+        1,
+        7,
+        7,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/hydrant_heart/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/argument.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/assumption.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/claim.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/user.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        5,
+        5,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/hydrant_heart/app/models/vote.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1401998802
+  }
+}
