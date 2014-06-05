@@ -49,7 +49,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   # Use debugger
-  gem 'debugger'
+  # gem 'debugger'
   # Shoulda-matchers for AR Associations testing
   gem 'shoulda-matchers'
   gem "factory_girl_rails", "~> 4.0"
