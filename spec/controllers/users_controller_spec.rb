@@ -61,8 +61,9 @@ describe UsersController do
                   author_id: user.id,
                   is_supporting: false
                 )}
-      
+
       get :index
       assigns(:recent_arguments).length.to eq(5) 
     end
+  end
 end

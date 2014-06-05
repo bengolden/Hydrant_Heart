@@ -5,45 +5,39 @@
         1,
         null
       ],
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/helpers/users_helper.rb": [
+        1,
+        null,
+        null
+      ],
       "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/controllers/welcome_controller.rb": [
-      "/Users/apprentice/Desktop/hydrant_heart/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/hydrant_heart/app/helpers/welcome_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/hydrant_heart/app/controllers/welcome_controller.rb": [
-
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/controllers/users_controller.rb": [
         1,
         null,
         1,
-        5,
-        5,
+        4,
         null,
         null
       ],
-
       "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/controllers/application_controller.rb": [
-
-      "/Users/apprentice/Desktop/hydrant_heart/app/controllers/application_controller.rb": [
-
         1,
         null,
         null,
         1,
         null
       ],
-
+      "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        11,
+        11,
+        null,
+        null
+      ],
       "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/argument.rb": [
-
-      "/Users/apprentice/Desktop/hydrant_heart/app/models/argument.rb": [
-
         1,
         1,
         1,
@@ -53,16 +47,13 @@
         null,
         null,
         null,
+        1,
         1,
         1,
         null,
         null
       ],
-
       "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/assumption.rb": [
-
-      "/Users/apprentice/Desktop/hydrant_heart/app/models/assumption.rb": [
-
         1,
         1,
         1,
@@ -70,11 +61,7 @@
         1,
         null
       ],
-
       "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/claim.rb": [
-
-      "/Users/apprentice/Desktop/hydrant_heart/app/models/claim.rb": [
-
         1,
         1,
         1,
@@ -84,14 +71,19 @@
         null,
         null,
         1,
+        null,
+        null,
         1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
         null
       ],
-
       "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/user.rb": [
-
-      "/Users/apprentice/Desktop/hydrant_heart/app/models/user.rb": [
-
         1,
         null,
         1,
@@ -112,22 +104,12 @@
         null,
         null,
         1,
-
-        1,
-        1,
+        15,
+        15,
         null,
         null
       ],
       "/Users/justinstewart/Desktop/Phase3/Hydrant_Heart/app/models/vote.rb": [
-
-        4,
-        4,
-        null,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/hydrant_heart/app/models/vote.rb": [
-
         1,
         1,
         1,
@@ -141,10 +123,6 @@
         null
       ]
     },
-
-    "timestamp": 1401995637
-
-    "timestamp": 1402002058
-
+    "timestamp": 1402005283
   }
 }
