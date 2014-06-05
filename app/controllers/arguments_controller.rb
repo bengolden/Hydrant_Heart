@@ -4,6 +4,11 @@ class ArgumentsController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
+  	@arguments = Argument.all 
+  end
+
+  def show
+  	@argument = Argument.find(params[:id])
   end
 
 end

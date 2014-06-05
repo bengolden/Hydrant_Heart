@@ -12,7 +12,7 @@ feature "User browing the website" do
 
 		it "sees an argument with an author" do
 			visit("/arguments/#{@argument.id}")
-			find_link('Fuck this shitty claim or conc or w/e').visible?
+			find('#argument_conclusion').visible?
 		end
 
 	end
