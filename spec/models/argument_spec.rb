@@ -38,7 +38,20 @@ describe Argument do
     it "knows if it is supporting a claim or not" do
       expect(argument2.is_supporting).to eq(true)
     end
+  end
 
+  context "validations:" do
+    it "is_supporting should have a boolean." do
+      should ensure_inclusion_of(:is_supporting).in_array([true, false])
+    end
+
+    it "its body should not be empty" do
+      should validate_presence_of(:conclusion)
+    end
+
+    it "its body should not be empty" do
+      should validate_presence_of(:author)
+    end
   end
   
 end
