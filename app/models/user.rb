@@ -11,5 +11,6 @@ class User < ActiveRecord::Base
   
   # Add password validations after views created.
   
-  has_secure_password
+  # has_secure_password
+  attr_accessor :password
 end
