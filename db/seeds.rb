@@ -24,7 +24,6 @@ User.create!(users)
 20.times do
 	Claim.create!(body: Faker::Lorem.sentence(4),
 							 author_id: (rand(5)+1))
-end
 
 #Create Arguments
 20.times do
