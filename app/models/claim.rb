@@ -5,4 +5,6 @@ class Claim < ActiveRecord::Base
   has_many :arguments_where_premise, through: :assumptions_where_premise, source: :argument
   has_many :votes, foreign_key: :voteable_id
 
+
+  validates :body, presence: true, length: { maximum: 140, too_long: "Its like Twitter, only 140 characters per claim.  That's fun!"}
 end

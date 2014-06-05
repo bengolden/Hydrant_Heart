@@ -5,4 +5,9 @@ class Argument < ActiveRecord::Base
   belongs_to :author, class_name: "User"
   has_many :votes, foreign_key: :voteable_id
 
+
+
+  validates :is_supporting, inclusion: { in: [true, false] }
+  # validates :conclusion, :author, presence: true
+
 end
