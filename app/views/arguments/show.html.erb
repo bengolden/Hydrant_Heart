@@ -1,11 +1,16 @@
 <%#= render :nav %>
 
 <!-- link_to("Accept", ) -->
+<section id="argument_container">
 
-<div id="argument_container">
-	<h2 id="argument_conclusion"><%= @argument.conclusion.body %></h2>
-	<h3 id="argument_author"><%= @argument.author%></h3>
+	<div id="conclusion_container">
+		<h2 id="argument_conclusion"><%= @argument.conclusion.body %></h2>
+		<h3 id="argument_author"><%= @argument.author.username%></h3>
+	</div>
 
-	<h2 id="argument_conclusion"><%= @argument.conclusion%></h2>
+	<% @argument.%>
 
-</div>
+	<div class="premise_container">
+		<h4 id=""> </h4>
+	</div>
+</section> 
