@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def show
     # @recent_claims = current_user.authored_claims.most_recent_first
     # @recent_arguments = current_user.authored_arguments.most_recent_first
+    
   end
 
   #not tested

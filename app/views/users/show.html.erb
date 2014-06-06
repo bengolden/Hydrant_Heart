@@ -1,0 +1,23 @@
+<h1>Welcome, Current_User.username</h1>
+<img src="current_user.img_url"/>
+
+<div class="listings">
+<h2>Recent Claims</h2>
+<ul>
+  <%# @recent_claims.each do |claim| %>
+  <li><a href="#"><%#= claim.body %></a></li>
+  <%#end %>
+</ul>
+</div>
+
+<div class="listings">
+<h2>Recent Arguments</h2>
+<ul>
+  <%# @recent_arguments.each do |arg| %>
+  <%# if arg.is_supporting? %>
+    <li><a href="#">Supporting: <%#= arg.conclusion.body %></a></li>
+  <%# else %>
+    <li><a href="#">Opposing: <%#= arg.conclusion.body %></a></li>
+  <%#end %>
+</ul>
+</div>
