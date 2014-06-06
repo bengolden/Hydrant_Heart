@@ -27,11 +27,11 @@ describe Argument do
     let(:argument) { Argument.create(author_id: 1, conclusion_id: 4, is_supporting: false)}
     let(:argument2) { Argument.create(author_id: 5, conclusion_id: 7, is_supporting: true)}
 
-    it "knows its author" do
+    it "knows its author id" do
       expect(argument.author_id).to eq(1)
     end
 
-    it "knows its conclusion" do
+    it "knows its conclusion id" do
       expect(argument.conclusion_id).to eq(4)
     end
 
@@ -54,17 +54,5 @@ describe Argument do
     end
   end
 
-  describe "most_recent_first" do
-    it "orders the arguments starting with most recent" do
-      3.times do |i|
-        Argument.create!(:body => i.to_s)
-      end
-
-      recent_argument = Argument.all.most_recent_first.first
-      
-      expect(recent_argument.body).to eq("2")
-    end
-
-  end
 
 end
