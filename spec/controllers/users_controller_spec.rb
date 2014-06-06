@@ -10,24 +10,45 @@ describe UsersController do
   # Write test for finding user by session[:user_id]
 
   context "@recent_claims" do
-    let(:first_claim) { Claim.create(
-                        body: "Lieing is always bad.",
-                        author_id: user.id
-                      )}
+    let(:first_claim) { 
+      claim = Claim.create!(
+        body: "Lieing is always bad."
+      )
 
-    let(:second_claim) { Claim.create(
-                        body: "You shouldn't eat anything with a face.",
-                        author_id: user.id
-                       )}
+      user.authored_claims << claim
+      claim
+    }
+
+    let(:second_claim) {
+      claim = Claim.create!(
+                        body: "You shouldn't eat anything with a face."
+                       )
+      user.authored_claims << claim
+      claim
+    }
 
     it "returns the claims in order of creation starting with most recently created." do
-      get :index
-      assigns(:recent_claims).first.should eq(second_claim)
+      user = User.create!(
+        username: "Puffy",
+        email: "nobiggy@gmail.com",
+        password: "password"
+      )
+
+      user.authored_claims << Claim.create!(
+        body: "Lieing is always bad."
+      )
+
+      user.authored_claims << Claim.create!(
+        body: "Lieing is always good."
+      )
+      
+      get :show
+      assigns(:recent_claims).first.body.should eq("Lieing is always good.")
     end
 
     it "it returns only 5 Claim objects" do
       10.times { Claim.create!(author_id: user.id, body: Faker::Lorem.word) }
-      get :index
+      get :show
       assigns(:recent_claims).length.to eq(5) 
     end
   end

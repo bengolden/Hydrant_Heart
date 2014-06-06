@@ -6,6 +6,8 @@ feature 'users/index.html.erb' do
   let(:argument) { Argument.create!(author_id: user.id, conclusion_id: conclusion.id, is_supporting: false) }
   let(:head_claim) { Claim.create!(author_id: user.id, body: "Capitalism drives inequality")}
 
-  it has 
+  it "should display an img associated with the user"
+
+  it "it should have a welcome heading displaying the user "
 
 end

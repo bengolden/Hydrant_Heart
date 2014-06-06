@@ -9,6 +9,10 @@ class Claim < ActiveRecord::Base
   validates :body, presence: true, length: { maximum: 140, too_long: "Its like Twitter, only 140 characters per claim.  That's fun!"}
   #validates :author, presence: true
 
+  scope :most_recent_first, lambda {
+    order("created_at DESC")
+  }
+
   def arguments_for
     self.arguments_where_conclusion.select{|argument| argument.is_supporting}
   end
