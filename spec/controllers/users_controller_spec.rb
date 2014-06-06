@@ -11,87 +11,93 @@ describe UsersController do
 
     it "redirects to profile page" do
       subject.should redirect_to(user_url(assigns(:user)))
+      UsersController.new
     end
+
+    it "creates a new instance of the user class" do
+      expect(User).to receive(:new)
+    end
+
   end
 
   # Write test for finding user by session[:user_id]
 
-  context "@recent_claims" do
-    let(:first_claim) { 
-      claim = Claim.create!(
-        body: "Lieing is always bad."
-      )
+  # context "@recent_claims" do
+  #   let(:first_claim) {
+  #     claim = Claim.create!(
+  #       body: "Lieing is always bad."
+  #     )
 
-      user.authored_claims << claim
-      claim
-    }
+  #     user.authored_claims << claim
+  #     claim
+  #   }
 
-    let(:second_claim) {
-      claim = Claim.create!(
-                        body: "You shouldn't eat anything with a face."
-                       )
-      user.authored_claims << claim
-      claim
-    }
+  #   let(:second_claim) {
+  #     claim = Claim.create!(
+  #                       body: "You shouldn't eat anything with a face."
+  #                      )
+  #     user.authored_claims << claim
+  #     claim
+  #   }
 
-    it "returns the claims in order of creation starting with most recently created." do
-      user = User.create!(
-        username: "Puffy",
-        email: "nobiggy@gmail.com",
-        password: "password"
-      )
+  #   it "returns the claims in order of creation starting with most recently created." do
+  #     user = User.create!(
+  #       username: "Puffy",
+  #       email: "nobiggy@gmail.com",
+  #       password: "password"
+  #     )
 
-      user.authored_claims << Claim.create!(
-        body: "Lieing is always bad."
-      )
+  #     user.authored_claims << Claim.create!(
+  #       body: "Lieing is always bad."
+  #     )
 
-      user.authored_claims << Claim.create!(
-        body: "Lieing is always good."
-      )
-      
-      get :show
-      assigns(:recent_claims).first.body.should eq("Lieing is always good.")
-    end
+  #     user.authored_claims << Claim.create!(
+  #       body: "Lieing is always good."
+  #     )
 
-    it "it returns only 5 Claim objects" do
-      10.times { Claim.create!(author_id: user.id, body: Faker::Lorem.word) }
-      get :show
-      assigns(:recent_claims).length.to eq(5) 
-    end
-  end
+  #     get :show
+  #     assigns(:recent_claims).first.body.should eq("Lieing is always good.")
+  #   end
 
-  context "@recent_arguments" do
-    let (:conclusion) { Claim.create(
-                        body: "Lieing is always bad.",
-                        author_id: user.id
-                      )}
+  #   it "it returns only 5 Claim objects" do
+  #     10.times { Claim.create!(author_id: user.id, body: Faker::Lorem.word) }
+  #     get :show
+  #     assigns(:recent_claims).length.to eq(5)
+  #   end
+  # end
 
-    let(:first_argument) { Argument.create!(
-                        conclusion_id: conclusion.id,
-                        author_id: user.id,
-                        is_supporting: true
-                      )}
+  # context "@recent_arguments" do
+  #   let (:conclusion) { Claim.create(
+  #                       body: "Lieing is always bad.",
+  #                       author_id: user.id
+  #                     )}
 
-    let(:second_argument) { Argument.create!(
-                        conclusion_id: conclusion.id,
-                        author_id: user.id,
-                        is_supporting: false
-                       )}
+  #   let(:first_argument) { Argument.create!(
+  #                       conclusion_id: conclusion.id,
+  #                       author_id: user.id,
+  #                       is_supporting: true
+  #                     )}
 
-    # it "returns the arguments in order of creation starting with most recently created." do
-    #   get :index
-    #   assigns(:recent_arguments).first.should eq(second_argument)
-    # end
+  #   let(:second_argument) { Argument.create!(
+  #                       conclusion_id: conclusion.id,
+  #                       author_id: user.id,
+  #                       is_supporting: false
+  #                      )}
 
-    it "it returns only 5 argument objects" do
-      10.times { Argument.create!(
-                  conclusion_id: conclusion.id,
-                  author_id: user.id,
-                  is_supporting: false
-                )}
+  #   # it "returns the arguments in order of creation starting with most recently created." do
+  #   #   get :index
+  #   #   assigns(:recent_arguments).first.should eq(second_argument)
+  #   # end
 
-      get :index
-      assigns(:recent_arguments).length.to eq(5) 
-    end
-  end
+  #   it "it returns only 5 argument objects" do
+  #     10.times { Argument.create!(
+  #                 conclusion_id: conclusion.id,
+  #                 author_id: user.id,
+  #                 is_supporting: false
+  #               )}
+
+  #     get :index
+  #     assigns(:recent_arguments).length.to eq(5)
+  #   end
+  # end
 end

@@ -104,4 +104,5 @@ describe User do
       with_message('Improper email format')
     end
   end
+
 end
