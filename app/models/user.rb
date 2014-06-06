@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
 	# email format test passing without formatting :)
 
 
+
+
+
 	def password
 		@password ||= BCrypt::Password.new(password_hash)
 	end
