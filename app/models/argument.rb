@@ -11,4 +11,8 @@ class Argument < ActiveRecord::Base
   validates :author, presence: true
   validates :conclusion, presence: true
 
+  scope :most_recent_first, lambda {
+    order("created_at DESC")
+  }
+
 end

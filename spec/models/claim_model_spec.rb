@@ -40,4 +40,17 @@ describe Claim do
     end
   end
 
+  describe "most_recent_first" do
+    it "orders the results starting with most recent" do
+      3.times do |i|
+        Claim.create!(:body => i.to_s)
+      end
+
+      recent_claim = Claim.all.most_recent_first.first
+      
+      expect(recent_claim.body).to eq("2")
+    end
+
+  end
+
 end

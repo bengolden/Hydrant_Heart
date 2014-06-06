@@ -1,0 +1,23 @@
+<%#= render :nav %>
+
+<!-- link_to("Accept", ) -->
+<section id="argument_container">
+
+	<div id="conclusion_container">
+		<h2 id="argument_conclusion">Argument: <%= @argument.conclusion.body %></h2>
+		<h3 id="argument_author">by: <%= @argument.author.username%></h3>
+	</div>
+
+	<h2>Premises for this argument:</h2>
+	<div class="premise#{premise.id}_container">
+		<% @argument.premises.each do |premise|%>
+				<h4 id="premise#{premise.id}">
+					<%= link_to(premise.body, argument_path(premise)) %>
+
+					by: <%= link_to(premise.author.username, user_path(premise.author)) %>
+				</h4>
+		<% end -%>
+	</div>
+
+
+</section> 
