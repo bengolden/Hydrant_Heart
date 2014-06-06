@@ -6,14 +6,12 @@ class UsersController < ApplicationController
     @recent_claims = user.authored_arguments.most_recent_first
   end
 
-  #not tested
   def new
-    @user = User.new #not tested
+    @user = User.new
   end
   #not tested
   def create
-    @user = User.new(user_params) #not tested
-    @user.save! #not tested
+    @user = User.create(user_params) #not tested
     redirect_to "/users/#{@user.id}"
   end
 
