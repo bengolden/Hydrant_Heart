@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('.vote_button').on('click', function(e){
+    e.preventDefault();
+    var url;
+    var data;
+
+    
+  }); 
+});
