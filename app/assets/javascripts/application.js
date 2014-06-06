@@ -19,8 +19,12 @@ $(function() {
   $('.vote_button').on('click', function(e){
     e.preventDefault();
     var url = '/votes';
-    var data = { : };
+    var data = this.data();
 
+    console.log(data);
 
+    $.post(url, data, function(resp){
+      console.log(resp);
+    });
   }); 
 });
