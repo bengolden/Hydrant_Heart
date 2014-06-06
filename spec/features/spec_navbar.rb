@@ -8,8 +8,8 @@ describe "Navbar Spec" do
 
     it "should show the navigation on the home page" do
       visit '/'
-      expect(page).to have_link("New Claim")
-      expect(page).to have_link("New Argument")
+      expect(page).to have_link("New Claim", :href => '/claims/new')
+      expect(page).to have_link("New Argument", :href => '/arguments/new')
     end
 
 
@@ -17,23 +17,23 @@ describe "Navbar Spec" do
     	xit "should show profile and logout on home page" do
     		visit '/'
 	    	# create session
-	    	expect(page).to have_link('Profile')
-	    	expect(page).to have_link('Logout')
+	    	expect(page).to have_link('Profile', :href => "/users/#{current_user.id}")
+	    	expect(page).to have_link('Logout', :href =>'/logout')
 	    end
     end
 
     context 'When not logged in' do
     	xit "should show signup and login on home page" do
     		visit '/'
-	    	expect(page).to have_link('Sign up')
-	    	expect(page).to have_link('Login')
+	    	expect(page).to have_link('Sign up', :href => '/signup')
+	    	expect(page).to have_link('Login', :href => '/login')
 	    end
     end
 
     it "should show the navigation on new user page" do
       visit '/users/new'
-      expect(page).to have_link("New Claim")
-      expect(page).to have_link("New Argument")
+      expect(page).to have_link("New Claim", :href => '/claims/new')
+      expect(page).to have_link("New Argument", :href => '/arguments/new')
     end
 
 
@@ -41,16 +41,16 @@ describe "Navbar Spec" do
     	xit "should show profile and logout on new user page" do
     		visit '/'
 	    	# create session
-	    	expect(page).to have_link('Profile')
-	    	expect(page).to have_link('Logout')
+	    	expect(page).to have_link('Profile', :href => "/users/#{current_user.id}")
+	    	expect(page).to have_link('Logout', :href =>'/logout')
 	    end
     end
 
     context 'When not logged in' do
     	xit "should show signup and login on new user page" do
     		visit '/'
-	    	expect(page).to have_link('Sign up')
-	    	expect(page).to have_link('Login')
+	    	expect(page).to have_link('Sign up', :href => '/signup')
+	    	expect(page).to have_link('Login', :href => '/login')
 	    end
     end
 
