@@ -1,0 +1,125 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/apprentice/Desktop/HydrantHeart/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/HydrantHeart/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/HydrantHeart/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        11,
+        11,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/HydrantHeart/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/HydrantHeart/app/models/argument.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/HydrantHeart/app/models/assumption.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/HydrantHeart/app/models/claim.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/HydrantHeart/app/models/user.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        11,
+        11,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/HydrantHeart/app/models/vote.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/HydrantHeart/app/controllers/claims_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1402070535
+  }
+}
