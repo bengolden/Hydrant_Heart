@@ -33,7 +33,9 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt', '~> 3.1.2'
+
+### GUYS : changed your ruby name, passes all tests. 
 
 # Add in coverall
 gem 'coveralls', require: false
