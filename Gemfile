@@ -49,11 +49,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   # Use debugger
-  # gem 'debugger'
+  # gem 'debugger' '~> 1.6.6'
   # Shoulda-matchers for AR Associations testing
   gem 'shoulda-matchers'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
 end
 
 #Use Faker for seed file
-gem 'faker'
