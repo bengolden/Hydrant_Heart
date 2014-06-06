@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140604162837) do
     t.string   "username"
     t.string   "email"
     t.string   "password_hash"
-    t.string   "image_url"
+    t.string   "image_url",     default: "http://fc08.deviantart.net/fs70/f/2012/199/4/3/eddsworld___unknown_profile_by_xnamenloserx-d57qvfm.jpg"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
