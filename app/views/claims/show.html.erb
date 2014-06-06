@@ -1,7 +1,7 @@
 <div class='main_claim'>
   <h2><%= @claim.body %></h2>
-  <button class="vote_button" type="button">Agree</button>
-  <button class="vote_button" type="button">Disagree</button>
+  <button class="vote_button" type="button" data-voteable-id="<%= @claim.id %>" data-voteable-type="Claim" data-value="true">Agree</button>
+  <button class="vote_button" type="button" data-voteable-id="<%= @claim.id %>" data-voteable-type="Claim" data-value="false">Disagree</button>
   <p>Author:
     <a href="/user/<%= @claim.author.id %>">
       <%= @claim.author.username %>

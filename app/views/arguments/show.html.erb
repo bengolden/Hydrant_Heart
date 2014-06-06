@@ -6,8 +6,8 @@
 	<div id="conclusion_container">
 		<h2 id="argument_conclusion">Argument: <%= @argument.conclusion.body %></h2>
 		<h3 id="argument_author">by: <%= @argument.author.username%></h3>
-		<button class="vote_button" type="button">Agree</button>
-	  <button class="vote_button" type="button">Disagree</button>
+		<button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="false">Agree</button>
+	  <button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="false">Disagree</button>
 	</div>
 
 	<h2>Premises for this argument:</h2>

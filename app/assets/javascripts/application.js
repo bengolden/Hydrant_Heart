@@ -18,9 +18,9 @@
 $(function() {
   $('.vote_button').on('click', function(e){
     e.preventDefault();
-    var url;
-    var data;
+    var url = '/votes';
+    var data = { : };
 
-    
+
   }); 
 });
