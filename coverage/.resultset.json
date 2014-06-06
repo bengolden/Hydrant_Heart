@@ -1,21 +1,25 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/agrodzins2/hydrant/Hydrant_Heart/app/helpers/application_helper.rb": [
+
+      "/Users/elizabethcruz/Desktop/DBC/phase-3/Hydrant_Heart/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/agrodzins2/hydrant/Hydrant_Heart/app/helpers/users_helper.rb": [
+      "/Users/elizabethcruz/Desktop/DBC/phase-3/Hydrant_Heart/app/helpers/users_helper.rb": [
+
         1,
         null,
         null,
         null
       ],
-      "/Users/agrodzins2/hydrant/Hydrant_Heart/app/helpers/welcome_helper.rb": [
+
+      "/Users/elizabethcruz/Desktop/DBC/phase-3/Hydrant_Heart/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/Users/agrodzins2/hydrant/Hydrant_Heart/app/controllers/users_controller.rb": [
+      "/Users/elizabethcruz/Desktop/DBC/phase-3/Hydrant_Heart/app/controllers/users_controller.rb": [
+
         1,
         null,
         1,
@@ -42,14 +46,16 @@
         null,
         null
       ],
-      "/Users/agrodzins2/hydrant/Hydrant_Heart/app/controllers/application_controller.rb": [
+
+      "/Users/elizabethcruz/Desktop/DBC/phase-3/Hydrant_Heart/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/agrodzins2/hydrant/Hydrant_Heart/app/controllers/welcome_controller.rb": [
+
+      "/Users/elizabethcruz/Desktop/DBC/phase-3/Hydrant_Heart/app/controllers/welcome_controller.rb": [
         1,
         1,
         0,
@@ -58,6 +64,7 @@
         null
       ]
     },
-    "timestamp": 1402065711
+
+    "timestamp": 1402065396
   }
 }
