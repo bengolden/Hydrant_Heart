@@ -57,8 +57,24 @@ describe User do
     it "has many votes" do
       should have_many(:votes)
     end
-    it "has many authored claims" do
-      should have_many(:authored_claims).class_name('Claim').with_foreign_key(:author_id)
+    context "authored claims" do
+      it "has many authored claims" do
+        should have_many(:authored_claims).class_name('Claim').with_foreign_key(:author_id)
+      end
+
+      it "orders them starting with most recent" do
+        user = User.create!(username: "Drew", email: "drew@braintree.com", password: "password")
+
+        user.authored_claims.create!(
+          body: "John loves mobile than web"
+        )
+
+        user.authored_claims.create!(
+          body: "Jason loves mobile than web"
+        )
+
+        expect(user.authored_claims.first.body).to eq("Jason loves mobile than web")
+      end
     end
     it "has many authored arguments" do
       should have_many(:authored_arguments).class_name('Argument').with_foreign_key(:author_id)

@@ -54,4 +54,17 @@ describe Argument do
     end
   end
 
+  describe "most_recent_first" do
+    it "orders the arguments starting with most recent" do
+      3.times do |i|
+        Argument.create!(:body => i.to_s)
+      end
+
+      recent_argument = Argument.all.most_recent_first.first
+      
+      expect(recent_argument.body).to eq("2")
+    end
+
+  end
+
 end
