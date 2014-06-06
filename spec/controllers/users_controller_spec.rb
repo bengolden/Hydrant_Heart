@@ -71,10 +71,10 @@ describe UsersController do
                         is_supporting: false
                        )}
 
-    it "returns the arguments in order of creation starting with most recently created." do
-      get :index
-      assigns(:recent_arguments).first.should eq(second_argument)
-    end
+    # it "returns the arguments in order of creation starting with most recently created." do
+    #   get :index
+    #   assigns(:recent_arguments).first.should eq(second_argument)
+    # end
 
     it "it returns only 5 argument objects" do
       10.times { Argument.create!(
