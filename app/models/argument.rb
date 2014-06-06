@@ -12,7 +12,7 @@ class Argument < ActiveRecord::Base
   validates :conclusion, presence: true
 
   scope :most_recent_first, lambda {
-    order("created_at DESC")
+    order("created_at DESC").limit(5)
   }
 
 end
