@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require 'Faker'
+require 'faker'
 
 
 users = [{email: "justin@email.com", username: "justin", password: "password", image_url: "http://www.aquariumfish.net/images_01/cambodian_betta_male_120217b6_w0640.jpg"},
@@ -23,8 +23,7 @@ User.create!(users)
 #Create Claims
 20.times do
 	Claim.create!(body: Faker::Lorem.sentence(4),
-							  author_id: (rand(5)+1))
-end
+							 author_id: (rand(5)+1))
 
 #Create Arguments
 20.times do
