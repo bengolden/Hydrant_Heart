@@ -17,17 +17,17 @@
 
 $(function() {
   console.log("hello");
-  $('vote_button').on('click', function(e){
+  $('.vote_button').on('click', function(e){
     e.preventDefault();
     console.log("Hello");
     var url = '/votes';
-    var data = this.data();
+    var data = $(this).data();
     console.log(data);
 
     $.post(url, data, function(resp){
+      console.log("We made it to the response.")
       console.log(resp);
+      $('.vote_button').hide();
     });
-
-    
-  }); 
+  });
 });
