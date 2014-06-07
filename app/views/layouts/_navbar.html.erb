@@ -5,21 +5,21 @@
 	<li>
 		<%= link_to "New Argument", "/arguments/new" %>
 	</li>
-	<%# if current_user %>
-<!-- 	<li>
-		<%#= link_to "Profile", "/users/#{current_user.id}" %>
+	<% if current_user %>
+	<li>
+		<%= link_to "Profile", "/users/#{current_user.id}" %>
 	</li>
 	<li>
-		<%#= link_to "Log out", "/signout" %>
+		<%= link_to "Log out", "/welcome/signout" %>
 	</li>
-	<%# else %>
+	<% else %>
 	<li>
-		<%#= link_to "Sign up", "/signup" %>
+		<%= link_to "Sign up", "/users/new" %>
 	</li>
 	<li>
-		<%#= link_to "Log in", "/login" %>
-	</li> -->
-	<%# end %>
+		<%= link_to "Log in", "/welcome/login" %>
+	</li>
+	<% end %>
 
 
 </ul>
