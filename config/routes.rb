@@ -2,6 +2,7 @@ HydrantHeart::Application.routes.draw do
   get "welcome/index"
   root 'welcome#index'
   get "welcome/login"
+  post "welcome/login" => "welcome#authenticate"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

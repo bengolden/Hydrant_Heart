@@ -9,10 +9,14 @@ class WelcomeController < ApplicationController
   #login not tested
   def authenticate
     @user = User.find_by_email(params[:email])
-    if @user.password == params[:password]
-      give_token
+    if @user
+      if @user.password == params[:password]
+        give_token
+      else
+        redirect_to home_url
+      end
     else
-      redirect_to home_url
+      redirect_to "/welcome/login"
     end
   end
 
