@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   #not tested
   def create
     @user = User.create(user_params) #not tested
+    session[:user_id] = @user.id
     redirect_to user_path(@user)
   end
 
