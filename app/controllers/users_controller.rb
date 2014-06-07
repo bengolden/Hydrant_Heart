@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
 
   def show
-    # @recent_claims = current_user.authored_claims.most_recent_first
-    # @recent_arguments = current_user.authored_arguments.most_recent_first
+    @recent_claims = current_user.authored_claims.most_recent_first
+    @recent_arguments = current_user.authored_arguments.most_recent_first
   end
 
   def new
