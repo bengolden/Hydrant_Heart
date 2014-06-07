@@ -3,7 +3,7 @@
 	<div id="conclusion_container">
 		<h2 id="argument_conclusion">Argument <%= @position %>:</h2>
 		<div>
-			<%= link_to(@argument.conclusion.body, @argument.conclusion) %>
+			<%= link_to(@conclusion.body, @conclusion) %>
 
 		</div>
 		<div>
@@ -14,7 +14,7 @@
 
 	<h2>Premises:</h2>
 	<div class="premise#{premise.id}_container">
-		<% @argument.premises.each do |premise|%>
+		<% @premises.each do |premise|%>
 				<h4 id="premise#{premise.id}">
 					<%= link_to(premise.body, premise) %>
 				</h4>
@@ -22,7 +22,7 @@
 	</div>
 <hr>
 	<div class = "attribution">
-		Author: <%= link_to(@argument.author.username, @argument.author) %>
+		Author: <%= link_to(@author.username, @author) %>
 	</div>
 
 </section>

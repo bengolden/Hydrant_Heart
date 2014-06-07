@@ -11,6 +11,9 @@ class ArgumentsController < ApplicationController
   def show
   	@argument = Argument.find(params[:id])
     @position = @argument.is_supporting ? "supporting" : "opposing"
+    @conclusion = @argument.conclusion
+    @author = @argument.author
+    @premises = @argument.premises
   end
 
   def new
