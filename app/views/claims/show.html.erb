@@ -17,27 +17,31 @@
 
 <div class='args_supporting'>
   <p>Arguments supporting this claim</p>
-  <li><%= @args_for[0].premises[0].body %>
-  --<a href="/user/<%= @claim.author.id %>">
-    <%= @args_for[0].premises[0].author.username %></li></li>
-  </a>
-  <li><%= @args_for[0].premises[1].body %>
-  --<a href="/user/<%= @claim.author.id %>">
-    <%= @args_for[0].premises[1].author.username %></li></li>
-  </a>
+  <% if @args_for[0] %>
+    <li><%= @args_for[0].premises[0].body %>
+    --<a href="/user/<%= @claim.author.id %>">
+      <%= @args_for[0].premises[0].author.username %></li></li>
+    </a>
+    <li><%= @args_for[0].premises[1].body %>
+    --<a href="/user/<%= @claim.author.id %>">
+      <%= @args_for[0].premises[1].author.username %></li></li>
+    </a>
+  <% end %>
   <br><button type="button">New Argument</button>
 </div>
 
 <div class='args_opposing'>
   <p>Arguments opposing this claim</p>
-  <li><%= @args_against[0].premises[0].body %>
-  --<a href="/user/<%= @claim.author.id %>">
-    <%= @args_against[0].premises[0].author.username %></li>
-  </a>
-  <li><%= @args_against[0].premises[1].body %>
-  --<a href="/user/<%= @claim.author.id %>">
-    <%= @args_against[0].premises[1].author.username %></li>
-  </a>
+  <% if @args_against[0] %>
+    <li><%= @args_against[0].premises[0].body %>
+    --<a href="/user/<%= @claim.author.id %>">
+      <%= @args_against[0].premises[0].author.username %></li>
+    </a>
+    <li><%= @args_against[0].premises[1].body %>
+    --<a href="/user/<%= @claim.author.id %>">
+      <%= @args_against[0].premises[1].author.username %></li>
+    </a>
+  <% end %>
   <br><button type="button">New Argument</button>
 </div>
 

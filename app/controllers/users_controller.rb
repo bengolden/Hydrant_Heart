@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def show
     # @recent_claims = current_user.authored_claims.most_recent_first
     # @recent_arguments = current_user.authored_arguments.most_recent_first
-    
   end
 
   def new
@@ -12,7 +11,7 @@ class UsersController < ApplicationController
   #not tested
   def create
     @user = User.create(user_params) #not tested
-    redirect_to "/users/#{@user.id}"
+    redirect_to user_path(@user)
   end
 
   private

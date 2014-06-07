@@ -13,7 +13,8 @@ feature "users/create.html.erb" do
     fill_in('Email', :with => 'ugly@duckling.com')
     fill_in('Password', :with => 'password')
     fill_in('Image url', :with => 'http://curiousanimals.net/wp-content/uploads/2008/05/nice-duckling.jpg')
-    expect {click_on('Create new user')}.to change(User, :count).by(1)
+    click_on('Create new user')
+    expect(current_path).to match /\/users\/\d+/
   end
 
   it "raises error with invalid information" do
@@ -22,9 +23,9 @@ feature "users/create.html.erb" do
     fill_in('Password', :with => 'password')
     fill_in('Image url', :with => 'http://curiousanimals.net/wp-content/uploads/2008/05/nice-duckling.jpg')
     expect {click_on('Create new user')}.to raise_error
-    # expect {click_on('Create new user')}.not_to change(User, :count)
-    # Should we add what error to expect here?
-    # second part doesn't work here because error is thrown
+    expect(current_path).to eq "/users/new"
+    expect(page).to have_content("some error")
+    #should not raise count by 1
   end
 
 
