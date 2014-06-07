@@ -24,6 +24,7 @@ User.create!(users)
 20.times do
 	Claim.create!(body: Faker::Lorem.sentence(4),
 							 author_id: (rand(5)+1))
+end
 
 #Create Arguments
 20.times do
@@ -40,7 +41,7 @@ end
 
 #Create votes
 200.times do
-	Vote.create!(user_id: (rand(5)+1), 
+	Vote.create!(user_id: (rand(5)+1),
 					 voteable_id: (rand(20) + 1),
 					 voteable_type: ["Claim", "Argument"].sample,
 					 value: [true, false].sample)
