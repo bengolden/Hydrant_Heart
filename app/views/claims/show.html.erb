@@ -7,42 +7,44 @@
       <%= @claim.author.username %>
     </a>
 <div>
-<hr><hr>
-
+<hr>
 <div class='premise'>
   <p>Arguments using this claim as a premise</p>
-  <li>confusion about this link</li>
-  <br><button type="button">New Argument</button>
+    <% @args_based_on.each do |arg| %>
+      <ul>
+        <li><%= link_to("Argument towards #{arg.conclusion.body}", arg) %> by <%= link_to(arg.author.username, arg.author) %></li>
+
+      </ul>
+    <%end%>
+<!--   <br><button type="button">New Argument</button>
+ -->
 </div>
+<hr>
 
 <div class='args_supporting'>
   <p>Arguments supporting this claim</p>
-  <% if @args_for[0] %>
-    <li><%= @args_for[0].premises[0].body %>
-    --<a href="/user/<%= @claim.author.id %>">
-      <%= @args_for[0].premises[0].author.username %></li></li>
-    </a>
-    <li><%= @args_for[0].premises[1].body %>
-    --<a href="/user/<%= @claim.author.id %>">
-      <%= @args_for[0].premises[1].author.username %></li></li>
-    </a>
-  <% end %>
-  <br><button type="button">New Argument</button>
+    <% @args_for.each do |arg| %>
+      <ul>
+          <li><%= arg.premises[0].body %></li>
+          <li><%= arg.premises[1].body if arg.premises[1] %></li>
+      </ul>
+      <p>Argument by <%= link_to(arg.author.username, arg.author) %></p>
+    <%end%>
+<!--   <button type="button">New Argument</button>
+ -->
 </div>
+<hr>
 
 <div class='args_opposing'>
   <p>Arguments opposing this claim</p>
-  <% if @args_against[0] %>
-    <li><%= @args_against[0].premises[0].body %>
-    --<a href="/user/<%= @claim.author.id %>">
-      <%= @args_against[0].premises[0].author.username %></li>
-    </a>
-    <li><%= @args_against[0].premises[1].body %>
-    --<a href="/user/<%= @claim.author.id %>">
-      <%= @args_against[0].premises[1].author.username %></li>
-    </a>
-  <% end %>
-  <br><button type="button">New Argument</button>
+    <% @args_against.each do |arg| %>
+      <ul>
+          <li><%= arg.premises[0].body %></li>
+          <li><%= arg.premises[1].body if arg.premises[1] %></li>
+      </ul>
+      <p>Argument by <%= link_to(arg.author.username, arg.author) %></p>
+    <%end%>
+<!-- <button type="button">New Argument</button> -->
 </div>
 
 
