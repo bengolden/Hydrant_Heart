@@ -1,11 +1,11 @@
-<h1>Welcome, <%= current_user.username %></h1>
-<img src="<%= current_user.image_url %>"/>
+<h1>Welcome, <%= @user.username %></h1>
+<img src="<%= @user.image_url %>"/>
 
 <div class="listings">
 <h2>Recent Claims</h2>
 <ul>
   <% @recent_claims.each do |claim| %>
-  <li><a href="#"><%= claim.body %></a></li>
+  <li><a href="/claims/<%= claim.id %>"><%= claim.body %></a></li>
   <% end %>
 </ul>
 </div>
@@ -15,9 +15,9 @@
 <ul>
   <% @recent_arguments.each do |arg| %>
     <% if arg.is_supporting? %>
-      <li><a href="#">Supporting: <%= arg.conclusion.body %></a></li>
+      <li><a href="/arguments/<%= arg.id %>">Supporting: <%= arg.conclusion.body %></a></li>
     <% else %>
-      <li><a href="#">Opposing: <%= arg.conclusion.body %></a></li>
+      <li><a href="/arguments/<%= arg.id %>">Opposing: <%= arg.conclusion.body %></a></li>
     <% end %>
   <% end %>
 </ul>

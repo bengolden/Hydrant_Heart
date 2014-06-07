@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
+$(document).on("page:load", function() {
   console.log("hello");
   $('.vote_button').on('click', function(e){
     e.preventDefault();
