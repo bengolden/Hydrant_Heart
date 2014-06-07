@@ -27,5 +27,7 @@ $(function() {
     $.post(url, data, function(resp){
       console.log(resp);
     });
+
+    
   }); 
 });
