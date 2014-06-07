@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
 
   def show
-    # @recent_claims = current_user.authored_claims.most_recent_first
-    # @recent_arguments = current_user.authored_arguments.most_recent_first
+    @recent_claims = current_user.authored_claims.most_recent_first
+    @recent_arguments = current_user.authored_arguments.most_recent_first
   end
 
   def new
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
   #not tested
   def create
     @user = User.create(user_params) #not tested
+    session[:user_id] = @user.id
     redirect_to user_path(@user)
   end
 
