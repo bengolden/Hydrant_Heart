@@ -21,7 +21,7 @@ HydrantHeart::Application.routes.draw do
   resources :claims
   resources :arguments
   resources :users
-  post "votes/create" => "votes#create"
+  post "votes" => "votes#create"
 
   # Example resource route with options:
   #   resources :products do
