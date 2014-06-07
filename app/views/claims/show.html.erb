@@ -24,9 +24,10 @@
 <div class='args_supporting'>
   <p>Arguments supporting this claim</p>
     <% @args_for.each do |arg| %>
-      <ul>
+      <ul><a href="/arguments/<%= arg.id %>">
           <li><%= arg.premises[0].body %></li>
           <li><%= arg.premises[1].body if arg.premises[1] %></li>
+          </a>
       </ul>
       <p>Argument by <%= link_to(arg.author.username, arg.author) %></p>
     <%end%>
@@ -37,10 +38,11 @@
 
 <div class='args_opposing'>
   <p>Arguments opposing this claim</p>
-    <% @args_against.each do |arg| %>
-      <ul>
+   <% @args_against.each do |arg| %>
+      <ul><a href="/arguments/<%= arg.id %>">
           <li><%= arg.premises[0].body %></li>
           <li><%= arg.premises[1].body if arg.premises[1] %></li>
+          </a>
       </ul>
       <p>Argument by <%= link_to(arg.author.username, arg.author) %></p>
     <%end%>
