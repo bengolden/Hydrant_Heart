@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  console.log("hello");
+  $('vote_button').on('click', function(e){
+    e.preventDefault();
+    console.log("Hello");
+    var url = '/votes';
+    var data = this.data();
+    console.log(data);
+
+    $.post(url, data, function(resp){
+      console.log(resp);
+    });
+  }); 
+});
