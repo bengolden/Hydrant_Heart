@@ -4,16 +4,24 @@ class WelcomeController < ApplicationController
     @recent_arguments = Argument.order('created_at desc').limit(10)
   end
 
+  #login not tested
   def login
   end
-  #login not tested
+
+  def signout
+    session.clear
+    redirect_to "/"
+  end
+
+  #authenticate not tested
   def authenticate
     @user = User.find_by_email(params[:email])
     if @user
       if @user.password == params[:password]
-        give_token
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
       else
-        redirect_to home_url
+        redirect_to "/"
       end
     else
       redirect_to "/welcome/login"
