@@ -10,6 +10,7 @@ class ArgumentsController < ApplicationController
 
   def show
   	@argument = Argument.find(params[:id])
+    @position = @argument.is_supporting ? "supporting" : "opposing"
   end
 
   def new
