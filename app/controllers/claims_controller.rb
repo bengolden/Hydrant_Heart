@@ -5,6 +5,7 @@ class ClaimsController < ApplicationController
     @claim = Claim.find(params[:id])
     @args_for = @claim.arguments_for
     @args_against = @claim.arguments_against
+    @args_based_on = @claim.arguments_where_premise
   end
 
   #not tested
