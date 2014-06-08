@@ -7,7 +7,7 @@
   <% end -%>
   <br><br>
 
-  <%= fields_for :premise, @argument.premise.first do |p| %>
+  <%= fields_for :premise, @argument.premises.first do |p| %>
     <%= p.label :body, "Premise the first" %>
     <%= p.text_field :body %>
     <% end -%>

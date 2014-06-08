@@ -9,6 +9,8 @@ class Argument < ActiveRecord::Base
   validates :author, presence: true
   validates :conclusion, presence: true
 
+  accepts_nested_attributes_for :conclusion, :assumptions, :premises, reject_if: lambda {|a| a[:body].blank?}, allow_destroy: true
+
   scope :most_recent_first, lambda {
     order("created_at DESC").limit(10)
   }
