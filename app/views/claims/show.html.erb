@@ -2,50 +2,72 @@
   <h2><%= @claim.body %></h2>
   <button class="vote_button" type="button" data-voteable-id="<%= @claim.id %>" data-voteable-type="Claim" data-value="true">Agree</button>
   <button class="vote_button" type="button" data-voteable-id="<%= @claim.id %>" data-voteable-type="Claim" data-value="false">Disagree</button>
-  <p>Author:
-    <%= link_to(@author.username, @author) %>
+  <div class = "user_group">
+    <div class="clear_both">Author:</div>
+    <div class="user_icon_container">
+    <%= link_to(image_tag(@author.image_url, class: "user_image"), @author) %>
+    </div>
+  </div>
+  <div class = "user_group">
+    <div class="clear_both">Supported by:</div>
+    <% @users_supporting.each do |user| %>
+      <div class="user_icon_container">
+        <%= link_to(image_tag(user.image_url, class: "user_image"), user) %>
+      </div>
+    <%end%>
+  </div>
+
+  <div class = "user_group">
+    <div class="clear_both">Opposed by:</div>
+    <% @users_opposing.each do |user| %>
+      <div class="user_icon_container">
+        <%= link_to(image_tag(user.image_url, class: "user_image"), user) %>
+      </div>
+    <%end%>
+    <div class = "clear_both"></div>
+  </div>
 
 <div>
 <hr>
 <div class='premise'>
   <p>Arguments using this claim as a premise</p>
-    <% @args_based_on.each do |arg| %>
-      <ul>
-        <li><%= link_to("Argument towards #{arg.conclusion.body}", arg) %> by <%= link_to(arg.author.username, arg.author) %></li>
-
-      </ul>
-    <%end%>
-<!--   <br><button type="button">New Argument</button>
- -->
+  <% @args_based_on.each do |arg| %>
+    <ul>
+      <li><%= link_to("Argument towards #{arg.conclusion.body}", arg) %> by <%= link_to(arg.author.username, arg.author) %></li>
+    </ul>
+  <%end%>
 </div>
 <hr>
 
 <div class='args_supporting'>
   <p>Arguments supporting this claim</p>
-    <% @args_for.each do |arg| %>
-      <ul><a href="/arguments/<%= arg.id %>">
-          <li><%= arg.premises[0].body %></li>
-          <li><%= arg.premises[1].body if arg.premises[1] %></li>
-          </a>
-      </ul>
-      <p>Argument by <%= link_to(arg.author.username, arg.author) %></p>
-    <%end%>
-<!--   <button type="button">New Argument</button>
- -->
+  <% @args_for.each do |arg| %>
+    <ul>
+      <a href="/arguments/<%= arg.id %>">
+        <li><%= arg.premises[0].body %></li>
+        <% if arg.premises[1] %>
+          <li><%= arg.premises[1].body %></li>
+        <%end%>
+      </a>
+    </ul>
+    <p>Argument by <%= link_to(arg.author.username, arg.author) %></p>
+  <%end%>
 </div>
 <hr>
 
 <div class='args_opposing'>
   <p>Arguments opposing this claim</p>
    <% @args_against.each do |arg| %>
-      <ul><a href="/arguments/<%= arg.id %>">
+      <ul>
+        <a href="/arguments/<%= arg.id %>">
           <li><%= arg.premises[0].body %></li>
-          <li><%= arg.premises[1].body if arg.premises[1] %></li>
-          </a>
+          <% if arg.premises[1] %>
+            <li><%= arg.premises[1].body %></li>
+          <%end%>
+        </a>
       </ul>
       <p>Argument by <%= link_to(arg.author.username, arg.author) %></p>
     <%end%>
-<!-- <button type="button">New Argument</button> -->
 </div>
 
 

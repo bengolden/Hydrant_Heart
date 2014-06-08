@@ -1,6 +1,6 @@
 <h2>User: <%= @user.username %></h2>
 <div class="profile_image_container">
-  <img class="profile_image" src="<%= @user.image_url %>"/>
+  <%= image_tag(@user.image_url, class: "user_image") %>
 </div>
 <div class="listings">
   <h2>Recent Claims</h2>

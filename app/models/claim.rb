@@ -21,4 +21,12 @@ class Claim < ActiveRecord::Base
     self.arguments_where_conclusion.select{|argument| !argument.is_supporting}
   end
 
+  def users_supporting
+    self.votes.select{|vote| vote.value}.map{|vote| vote.user}
+  end
+
+  def users_opposing
+    self.votes.select{|vote| !vote.value}.map{|vote| vote.user}
+  end
+
 end

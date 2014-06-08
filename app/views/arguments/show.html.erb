@@ -6,23 +6,44 @@
 			<%= link_to(@conclusion.body, @conclusion) %>
 
 		</div>
-		<div>
-			<button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="true">Accept</button>
-		  <button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="false">Reject</button>
-		</div>
 	</div>
 
 	<h2>Premises:</h2>
 	<div class="premise#{premise.id}_container">
 		<% @premises.each do |premise|%>
-				<h4 id="premise#{premise.id}">
-					<%= link_to(premise.body, premise) %>
-				</h4>
+		<div>
+			<%= link_to(premise.body, premise) %>
+		</div>
 		<% end %>
 	</div>
-<hr>
-	<div class = "attribution">
-		Author: <%= link_to(@author.username, @author) %>
+	<div>
+		<button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="true">Accept</button>
+	  <button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="false">Reject</button>
 	</div>
+<hr>
+  <div class = "user_group">
+		<div class="clear_both">Author:</div>
+
+		<div class="user_icon_container">
+			<%= link_to(image_tag(@author.image_url, class: "user_image"), @author) %>
+		</div>
+	</div>
+  <div class = "user_group">
+    <div class="clear_both">Supported by:</div>
+    <% @users_supporting.each do |user| %>
+      <div class="user_icon_container">
+        <%= link_to(image_tag(user.image_url, class: "user_image"), user) %>
+      </div>
+    <%end%>
+  </div>
+
+  <div class = "user_group">
+    <div class="clear_both">Opposed by:</div>
+    <% @users_opposing.each do |user| %>
+      <div class="user_icon_container">
+        <%= link_to(image_tag(user.image_url, class: "user_image"), user) %>
+      </div>
+    <%end%>
+  </div>
 
 </section>

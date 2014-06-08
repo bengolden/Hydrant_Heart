@@ -7,6 +7,8 @@ class ClaimsController < ApplicationController
     @args_against = @claim.arguments_against
     @args_based_on = @claim.arguments_where_premise
     @author = @claim.author
+    @users_supporting = @claim.users_supporting.uniq
+    @users_opposing = @claim.users_opposing.uniq
   end
 
   #not tested
