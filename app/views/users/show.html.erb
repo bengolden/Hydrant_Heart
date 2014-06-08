@@ -1,24 +1,25 @@
 <h1>Welcome, <%= @user.username %></h1>
-<img src="<%= @user.image_url %>"/>
-
+<div class="profile_image_container">
+  <img class="profile_image" src="<%= @user.image_url %>"/>
+</div>
 <div class="listings">
-<h2>Recent Claims</h2>
-<ul>
-  <% @recent_claims.each do |claim| %>
-  <li><a href="/claims/<%= claim.id %>"><%= claim.body %></a></li>
-  <% end %>
-</ul>
+  <h2>Recent Claims</h2>
+  <ul>
+    <% @recent_claims.each do |claim| %>
+    <li><a href="/claims/<%= claim.id %>"><%= claim.body %></a></li>
+    <% end %>
+  </ul>
 </div>
 
 <div class="listings">
-<h2>Recent Arguments</h2>
-<ul>
-  <% @recent_arguments.each do |arg| %>
-    <% if arg.is_supporting? %>
-      <li><a href="/arguments/<%= arg.id %>">Supporting: <%= arg.conclusion.body %></a></li>
-    <% else %>
-      <li><a href="/arguments/<%= arg.id %>">Opposing: <%= arg.conclusion.body %></a></li>
+  <h2>Recent Arguments</h2>
+  <ul>
+    <% @recent_arguments.each do |arg| %>
+      <% if arg.is_supporting? %>
+        <li><a href="/arguments/<%= arg.id %>">Supporting: <%= arg.conclusion.body %></a></li>
+      <% else %>
+        <li><a href="/arguments/<%= arg.id %>">Opposing: <%= arg.conclusion.body %></a></li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
 </div>
