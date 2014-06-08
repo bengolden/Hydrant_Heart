@@ -17,6 +17,7 @@ class ArgumentsController < ApplicationController
   end
 
   def new
+    redirect_to "/users/new" unless current_user
     @all_claims = Claim.all
     @argument = Argument.new
   end

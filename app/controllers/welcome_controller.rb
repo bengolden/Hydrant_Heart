@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    @recent_claims = Claim.order('created_at desc').limit(10)
-    @recent_arguments = Argument.order('created_at desc').limit(10)
+    @recent_claims = Claim.most_recent_first
+    @recent_arguments = Argument.most_recent_first
   end
 
   #login not tested
