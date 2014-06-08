@@ -30,7 +30,7 @@
   text-decoration: none;
 }
 
-.profile_image {
+.user_image {
   max-height: 100%;
   max-width: 100%;
 }
@@ -38,4 +38,18 @@
 .profile_image_container {
   max-height: 300px;
   max-width: 300px;
+}
+
+.user_icon_container {
+  max-height: 60px;
+  float: left;
+  margin-left: 2px;
+}
+
+.clear_both {
+  clear: both;
+}
+
+.vote_button {
+  font-size: 22px;
 }

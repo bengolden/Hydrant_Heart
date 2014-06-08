@@ -13,4 +13,12 @@ class Argument < ActiveRecord::Base
     order("created_at DESC").limit(10)
   }
 
+  def users_supporting
+    self.votes.select{|vote| vote.value}.map{|vote| vote.user}
+  end
+
+  def users_opposing
+    self.votes.select{|vote| !vote.value}.map{|vote| vote.user}
+  end
+
 end

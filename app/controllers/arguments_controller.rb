@@ -14,6 +14,9 @@ class ArgumentsController < ApplicationController
     @conclusion = @argument.conclusion
     @author = @argument.author
     @premises = @argument.premises
+    @users_supporting = @argument.users_supporting.uniq
+    @users_opposing = @argument.users_opposing.uniq
+
   end
 
   def new
