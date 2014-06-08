@@ -6,6 +6,7 @@ class ClaimsController < ApplicationController
     @args_for = @claim.arguments_for
     @args_against = @claim.arguments_against
     @args_based_on = @claim.arguments_where_premise
+    @author = @claim.author
   end
 
   #not tested

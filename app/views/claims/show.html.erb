@@ -3,9 +3,8 @@
   <button class="vote_button" type="button" data-voteable-id="<%= @claim.id %>" data-voteable-type="Claim" data-value="true">Agree</button>
   <button class="vote_button" type="button" data-voteable-id="<%= @claim.id %>" data-voteable-type="Claim" data-value="false">Disagree</button>
   <p>Author:
-    <a href="/user/<%= @claim.author.id %>">
-      <%= @claim.author.username %>
-    </a>
+    <%= link_to(@author.username, @author) %>
+
 <div>
 <hr>
 <div class='premise'>
