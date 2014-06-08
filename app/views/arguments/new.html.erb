@@ -9,6 +9,7 @@
 
   <h3>Premise 1</h3>
   <select name="argument[premise1_id]" id="premise1_id">
+    <option value=nil></option>
     <% @all_claims.each do |claim| %>
       <option value="<%= claim.id %>"><%= claim.body %></option>
     <% end %>
@@ -16,6 +17,7 @@
 
   <h3>Premise 2</h3>
   <select name="argument[premise2_id]" id="premise2_id">
+    <option value=nil></option>
     <% @all_claims.each do |claim| %>
       <option value="<%= claim.id %>"><%= claim.body %></option>
     <% end %>
@@ -23,6 +25,7 @@
 
   <h3>Premise 3</h3>
   <select name="argument[premise3_id]" id="premise3_id">
+    <option value=nil></option>
     <% @all_claims.each do |claim| %>
       <option value="<%= claim.id %>"><%= claim.body %></option>
     <% end %>
