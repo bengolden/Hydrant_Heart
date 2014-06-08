@@ -28,5 +28,14 @@
 .navbar a {
   color: white;
   text-decoration: none;
+}
 
+.profile_image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.profile_image_container {
+  max-height: 300px;
+  max-width: 300px;
 }
