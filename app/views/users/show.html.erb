@@ -1,4 +1,4 @@
-<h1>Welcome, <%= @user.username %></h1>
+<h2>User: <%= @user.username %></h2>
 <div class="profile_image_container">
   <img class="profile_image" src="<%= @user.image_url %>"/>
 </div>
@@ -16,9 +16,9 @@
   <ul>
     <% @recent_arguments.each do |arg| %>
       <% if arg.is_supporting? %>
-        <li><a href="/arguments/<%= arg.id %>">Supporting: <%= arg.conclusion.body %></a></li>
+        <li><a href="/arguments/<%= arg.id %>">supporting <%= arg.conclusion.body %></a></li>
       <% else %>
-        <li><a href="/arguments/<%= arg.id %>">Opposing: <%= arg.conclusion.body %></a></li>
+        <li><a href="/arguments/<%= arg.id %>">opposing <%= arg.conclusion.body %></a></li>
       <% end %>
     <% end %>
   </ul>
