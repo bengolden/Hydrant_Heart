@@ -1,26 +1,28 @@
-<%#= render :nav %>
-<h1>HoneyTerds</h1>
 <!-- link_to("Accept", ) -->
 <section id="argument_container">
-
 	<div id="conclusion_container">
-		 <% @argument.is_supporting == true ? position = "supporting" : position = "opposing" %>
-		<h2 id="argument_conclusion">Argument <%= position %>: <%= @argument.conclusion.body %></h2>
-		<h3 id="argument_author">by: <%= @argument.author.username%></h3>
-		<button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="true">Agree</button>
-	  <button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="false">Disagree</button>
+		<h2 id="argument_conclusion">Argument <%= @position %>:</h2>
+		<div>
+			<%= link_to(@conclusion.body, @conclusion) %>
+
+		</div>
+		<div>
+			<button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="true">Accept</button>
+		  <button class="vote_button" type="button" data-voteable-id="<%= @argument.id %>" data-voteable-type="Argument" data-value="false">Reject</button>
+		</div>
 	</div>
 
-	<h2>Premises for this argument:</h2>
+	<h2>Premises:</h2>
 	<div class="premise#{premise.id}_container">
-		<% @argument.premises.each do |premise|%>
+		<% @premises.each do |premise|%>
 				<h4 id="premise#{premise.id}">
-					<%= link_to(premise.body, argument_path(premise)) %>
-
-					by: <%= link_to(premise.author.username, user_path(premise.author)) %>
+					<%= link_to(premise.body, premise) %>
 				</h4>
 		<% end %>
 	</div>
-
+<hr>
+	<div class = "attribution">
+		Author: <%= link_to(@author.username, @author) %>
+	</div>
 
 </section>
