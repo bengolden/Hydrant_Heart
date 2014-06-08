@@ -23,6 +23,7 @@ class ArgumentsController < ApplicationController
     redirect_to "/users/new" unless current_user
     @all_claims = Claim.all
     @argument = Argument.new
+    3.times { @argument.premises << Claim.new }
   end
 
   def create

@@ -1,37 +1,17 @@
-<h2>Create a new argument</h2>
-<h3>Conclusion</h3>
-<%= form_for @argument do |f| %>
-  <select name="argument[conclusion_id]" id="conclusion_id">
-    <% @all_claims.each do |claim| %>
-      <option value="<%= claim.id %>"><%= claim.body %></option>
-    <% end %>
-  </select>
+<%= form_for @argument do |arg| %>
 
-  <h3>Premise 1</h3>
-  <select name="argument[premise1_id]" id="premise1_id">
-    <option value=nil></option>
-    <% @all_claims.each do |claim| %>
-      <option value="<%= claim.id %>"><%= claim.body %></option>
-    <% end %>
-  </select>
+    <!-- Arguments Conclusion -->
+  <%= fields_for :conclusion, @argument.conclusion do |conc| %>
+    <%= conc.label :body, 'Conclusion:' %>
+    <%= conc.text_field :body %>
+  <% end -%>
+  <br><br>
 
-  <h3>Premise 2</h3>
-  <select name="argument[premise2_id]" id="premise2_id">
-    <option value=nil></option>
-    <% @all_claims.each do |claim| %>
-      <option value="<%= claim.id %>"><%= claim.body %></option>
-    <% end %>
-  </select>
+  <%= fields_for :premise, @argument.premise.first do |p| %>
+    <%= p.label :body, "Premise the first" %>
+    <%= p.text_field :body %>
+    <% end -%>
+    <% %>
 
-  <h3>Premise 3</h3>
-  <select name="argument[premise3_id]" id="premise3_id">
-    <option value=nil></option>
-    <% @all_claims.each do |claim| %>
-      <option value="<%= claim.id %>"><%= claim.body %></option>
-    <% end %>
-  </select>
-
-  <input type="submit" value="Create Argument">
+  <%= submit_tag("submit") %>
 <% end %>
-
-
