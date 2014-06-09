@@ -2,21 +2,23 @@
 
 <%= form_for @argument do |arg| %>
 
-	<!-- Arguments Conclusion -->
 	<%= fields_for :conclusion, @argument.conclusion do |conc| %>
+
+	<!-- Conclusion for Argument -->
 	  <%= conc.label :body, 'Conclusion:' %>
 	  <%= conc.text_field :body %>
-	<br><br>
+		<br><br>
 
-		<!-- Supporting/Opposing Radio Tags -->
+		<!-- Conclusion Supporting/Opposing Radio Tags -->
 		<%= conc.label(:is_supporting, "Supporting:") %>
 		<%= conc.radio_button(:is_supporting, true) %>
 		<%= conc.label(:is_supporting, "Opposing:") %>
 		<%= conc.radio_button(:is_supporting, false) %>
-	<br><br>
+		<br><br>
 
 	<% end -%>
-	<!-- Arguments Premises -->
+
+	<!-- Premises for Argument -->
 	<% @argument.premises.each_with_index do |prem, i|%>
 	  <%= fields_for "premise#{i+1}" do |p| %>
 	    <%= p.label :body, "Premise #{i+1}" %>

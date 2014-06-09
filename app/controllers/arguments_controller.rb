@@ -29,14 +29,14 @@ class ArgumentsController < ApplicationController
     @conclusion = Claim.find_or_create_by(body: params[:conclusion][:body]) #, is_supporting: params[])
     current_user.authored_claims << @conclusion
 
-    @arg = Argument.find_or_create_by(author_id: current_user.id, is_supporting: true, conclusion_id: @conclusion.id)
+    current_user.authored_arguments << ( @argument = Argument.find_or_create_by(is_supporting: true, conclusion_id: @conclusion.id) )
     
-    @arg.premises << Claim.create(author_id: current_user.id, body: params[:premise1][:body])
-    @arg.premises << Claim.create(author_id: current_user.id, body: params[:premise2][:body])
-    @arg.premises << Claim.create(author_id: current_user.id, body: params[:premise3][:body])
-
-    redirect_to "/arguments/#{@arg.id}"
-    # @params = params # Activate for debugging, and comment out above
+    @argument.premises << Claim.create(author_id: current_user.id, body: params[:premise1][:body])
+    @argument.premises << Claim.create(author_id: current_user.id, body: params[:premise2][:body])
+    @argument.premises << Claim.create(author_id: current_user.id, body: params[:premise3][:body])
+  
+    redirect_to "/arguments/#{@argument.id}"
+    # @params = params # Activate for debugging, and comment out above redirect
   end
 
   private
