@@ -7,11 +7,15 @@
   <% end -%>
   <br><br>
 
-  <%= fields_for :premise, @argument.premises.first do |p| %>
-    <%= p.label :body, "Premise the first" %>
-    <%= p.text_field :body %>
-    <% end -%>
-    <% %>
+	<% @argument.premises.each_with_index do |prem, i|%>
+	  <%= fields_for "premise#{i+1}" do |p| %>
+	    <%= p.label :body, "Premise #{i+1}" %>
+	    <%= p.text_field :body %>
+	  	<%= p.label :_destroy, "Delete" %>
+	  	<%= p.check_box :_destroy%>
+	    <% end -%>
+	    <br>
+	<% end -%>
 
   <%= submit_tag("submit") %>
 <% end %>

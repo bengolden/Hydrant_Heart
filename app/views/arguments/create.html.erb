@@ -1,0 +1,22 @@
+	<%= @params.class %>
+	<br>
+	<% @params.each do |param| %>
+		<%= param.class %>
+		<%= param.inspect %>
+		<br>
+	<% end -%>
+<br>
+<br>
+<br>
+<%= @conclusion.inspect %>
+<br>
+<br>
+<br>
+<% @arg.premises.each do |p| %>
+	<%= p.body %>
+	<br>
+	<%end%>
+<br>
+<br>
+<br>
+<%= @arg.inspect %>

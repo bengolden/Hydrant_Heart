@@ -26,24 +26,37 @@ class ArgumentsController < ApplicationController
     3.times { @argument.premises << Claim.new }
   end
 
-  def create
-    # @premise1 = Claim.find(arg_params[:premise1_id])
-    # @premise2 = Claim.find(arg_params[:premise2_id]) unless arg_params[:premise2_id] == "nil"
-    # @premise3 = Claim.find(arg_params[:premise3_id]) unless arg_params[:premise3_id] == "nil"
-    # @conclusion = Claim.find(arg_params[:conclusion_id])
+  # def create
+  #   @premise1 = Claim.find(arg_params[:premise1_id])
+  #   @premise2 = Claim.find(arg_params[:premise2_id]) unless arg_params[:premise2_id] == "nil"
+  #   @premise3 = Claim.find(arg_params[:premise3_id]) unless arg_params[:premise3_id] == "nil"
+  #   @conclusion = Claim.find(arg_params[:conclusion_id])
 
-    # @arg = Argument.create(author_id: current_user.id, is_supporting: true, conclusion_id: @conclusion.id)
-    # [@premise1, @premise2, @premise3].each do |premise|
-    #   @arg.premises << premise if premise
-    # end
+  #   @arg = Argument.create(author_id: current_user.id, is_supporting: true, conclusion_id: @conclusion.id)
+  #   [@premise1, @premise2, @premise3].each do |premise|
+  #     @arg.premises << premise if premise
+  #   end
     # redirect_to "/arguments/#{@arg.id}"
+  # end
+
+  def create
+    @params = params
+
+    @conclusion = Claim.find_or_create_by(author_id: current_user.id, body: params[:conclusion][:body])
+
+    @arg = Argument.find_or_create_by(author_id: current_user.id, is_supporting: true, conclusion_id: @conclusion.id)
     
+    @arg.premises << Claim.create(author_id: current_user.id, body: params[:premise1][:body])
+    @arg.premises << Claim.create(author_id: current_user.id, body: params[:premise2][:body])
+    @arg.premises << Claim.create(author_id: current_user.id, body: params[:premise3][:body])
+
+    redirect_to "/arguments/#{@arg.id}"
   end
 
   private
 
-  # def arg_params
-  #   params.require(:argument).permit(:conclusion_id, :premise1_id, :premise2_id, :premise3_id)
-  # end
+    def arg_params
+    params.require(:argument).permit(:conclusion_id, :premise1_id, :premise2_id, :premise3_id)
+  end
 
 end
