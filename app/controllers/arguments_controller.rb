@@ -10,7 +10,7 @@ class ArgumentsController < ApplicationController
 
   def show
   	@argument = Argument.find(params[:id])
-    @position = @argument.is_supporting ? "supporting" : "opposing"
+    @position = (@argument.is_supporting == false ? "Supporting" : "Opposing")
     @conclusion = @argument.conclusion
     @author = @argument.author
     @premises = @argument.premises
@@ -21,28 +21,13 @@ class ArgumentsController < ApplicationController
 
   def new
     redirect_to "/users/new" unless current_user
-    @all_claims = Claim.all
     @argument = Argument.new
     3.times { @argument.premises << Claim.new }
   end
 
-  # def create
-  #   @premise1 = Claim.find(arg_params[:premise1_id])
-  #   @premise2 = Claim.find(arg_params[:premise2_id]) unless arg_params[:premise2_id] == "nil"
-  #   @premise3 = Claim.find(arg_params[:premise3_id]) unless arg_params[:premise3_id] == "nil"
-  #   @conclusion = Claim.find(arg_params[:conclusion_id])
-
-  #   @arg = Argument.create(author_id: current_user.id, is_supporting: true, conclusion_id: @conclusion.id)
-  #   [@premise1, @premise2, @premise3].each do |premise|
-  #     @arg.premises << premise if premise
-  #   end
-    # redirect_to "/arguments/#{@arg.id}"
-  # end
-
   def create
-    @params = params
-
-    @conclusion = Claim.find_or_create_by(author_id: current_user.id, body: params[:conclusion][:body])
+    @conclusion = Claim.find_or_create_by(body: params[:conclusion][:body]) #, is_supporting: params[])
+    current_user.authored_claims << @conclusion
 
     @arg = Argument.find_or_create_by(author_id: current_user.id, is_supporting: true, conclusion_id: @conclusion.id)
     
@@ -51,11 +36,12 @@ class ArgumentsController < ApplicationController
     @arg.premises << Claim.create(author_id: current_user.id, body: params[:premise3][:body])
 
     redirect_to "/arguments/#{@arg.id}"
+    # @params = params # Activate for debugging, and comment out above
   end
 
   private
 
-    def arg_params
+  def arg_params
     params.require(:argument).permit(:conclusion_id, :premise1_id, :premise2_id, :premise3_id)
   end
 

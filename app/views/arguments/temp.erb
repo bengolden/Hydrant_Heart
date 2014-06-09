@@ -1,0 +1,48 @@
+	<%#= arg.error_messages %>
+
+  <!-- Supporting/Opposing Radio Tags -->
+	<%#= render "new_arg_supportfield" %>
+  <br><br>
+  
+
+	<!-- Arguments Premises -->
+	<% @argument.premises.each_with_index do |premise, i| %>
+  	<%= fields_for premise  do |p| %>
+		<%= p.label :body, 'Premise' %>
+	  	<%= p.text_field :body %>
+	  	<%= p.label :_destroy, "Remove Premis" %>
+	  	<%= p.check_box :_destroy%>
+	  <% end %>
+		<br><br>	  
+  <% end %> 
+	<br><br>
+
+	<form action="/arguments" method="post">
+		<input type="text" name="conc[premise][body]">
+	</form>
+
+
+
+
+
+
+
+		<!-- Arguments Conclusion -->
+	  <%= fields_for :conclusion, @argument.conclusion do |conc| %>
+			<%= conc.label :body, 'Conclusion:' %>
+	  		<%= conc.text_field :body %>
+		<% end %>
+		<br><br>
+
+		
+
+	<%= label_tag(:is_supporting, "Supporting:") %>
+	<%= radio_button_tag(:is_supporting, true) %>
+	<%= label_tag(:is_supporting, "Opposing:") %>
+	<%= radio_button_tag(:is_supporting, false) %>
+
+
+
+	 <!-- Supporting/Opposing Radio Tags -->
+		<%= render "new_arg_supportfield" %>
+	  <br><br>
